@@ -15,6 +15,8 @@
 		04697D2D237BEE51004C3F21 /* shootingGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D2C237BEE51004C3F21 /* shootingGameTests.swift */; };
 		04697D38237BF48A004C3F21 /* StageScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04697D37237BF48A004C3F21 /* StageScene.sks */; };
 		04697D3A237BF941004C3F21 /* StageScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D39237BF941004C3F21 /* StageScene.swift */; };
+		04697D3C237C14D1004C3F21 /* MyScene1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04697D3B237C14D1004C3F21 /* MyScene1.sks */; };
+		04697D3E237C17FE004C3F21 /* Duck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D3D237C17FE004C3F21 /* Duck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		04697D2E237BEE51004C3F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04697D37237BF48A004C3F21 /* StageScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageScene.sks; sourceTree = "<group>"; };
 		04697D39237BF941004C3F21 /* StageScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageScene.swift; sourceTree = "<group>"; };
+		04697D3B237C14D1004C3F21 /* MyScene1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene1.sks; sourceTree = "<group>"; };
+		04697D3D237C17FE004C3F21 /* Duck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				04697D11237BEE4E004C3F21 /* AppDelegate.swift */,
 				04697D39237BF941004C3F21 /* StageScene.swift */,
 				04697D37237BF48A004C3F21 /* StageScene.sks */,
+				04697D3B237C14D1004C3F21 /* MyScene1.sks */,
+				04697D3D237C17FE004C3F21 /* Duck.swift */,
 				04697D19237BEE4E004C3F21 /* GameViewController.swift */,
 				04697D1B237BEE4E004C3F21 /* Main.storyboard */,
 				04697D1E237BEE51004C3F21 /* Assets.xcassets */,
@@ -186,6 +192,7 @@
 				04697D1D237BEE4E004C3F21 /* Main.storyboard in Resources */,
 				04697D1F237BEE51004C3F21 /* Assets.xcassets in Resources */,
 				04697D22237BEE51004C3F21 /* LaunchScreen.storyboard in Resources */,
+				04697D3C237C14D1004C3F21 /* MyScene1.sks in Resources */,
 				04697D38237BF48A004C3F21 /* StageScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04697D3E237C17FE004C3F21 /* Duck.swift in Sources */,
 				04697D1A237BEE4E004C3F21 /* GameViewController.swift in Sources */,
 				04697D12237BEE4E004C3F21 /* AppDelegate.swift in Sources */,
 				04697D3A237BF941004C3F21 /* StageScene.swift in Sources */,
