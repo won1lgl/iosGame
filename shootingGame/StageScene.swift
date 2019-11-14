@@ -32,6 +32,14 @@ class StageScene: SKScene {
     }
 }
 
+//MARK: -gameLoop
+extension StageScene {
+    override func update(_ currentTime: TimeInterval) {
+        syncRiflePosition()
+        setBoundry()
+    }
+}
+
 //MARK: -Touches
 extension StageScene {
     
@@ -193,6 +201,42 @@ extension StageScene {
                 .run{
                     self.usingTargetsXPostion.remove(at: self.usingTargetsXPostion.firstIndex(of: xPosition)!)
                 }]))
+        }
+    }
+    
+    func syncRiflePosition() {
+        guard let riffle = rifle else {
+            return
+        }
+        guard let crosshair = crosshair else {
+            return
+        }
+        
+        riffle.position.x = crosshair.position.x + 100
+    }
+    
+    func setBoundry() {
+        guard let scene = scene else {
+            return
+        }
+        guard let crosshair = crosshair else {
+            return
+        }
+        
+        if crosshair.position.x < scene.frame.minX {
+            crosshair.position.x = scene.frame.minX
+        }
+        
+        if crosshair.position.x > scene.frame.maxX {
+            crosshair.position.x = scene.frame.maxX
+        }
+        
+        if crosshair.position.y < scene.frame.minY {
+            crosshair.position.y = scene.frame.minY
+        }
+        
+        if crosshair.position.y > scene.frame.maxY {
+            crosshair.position.y = scene.frame.maxY
         }
     }
 }
