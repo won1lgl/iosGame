@@ -16,6 +16,8 @@ class StageScene: SKScene {
     var crosshair: SKSpriteNode?
     var fire = FireButton()
     
+    var magzine: Magzine!
+    
     //Touches
     var selectedNodes: [UITouch: SKSpriteNode] = [:]
     
@@ -23,6 +25,8 @@ class StageScene: SKScene {
     
     let duckXPosition: [Int] = [160, 240, 320, 400, 480, 560, 640]
     var usingTargetsXPostion = Array<Int>()
+    
+    let ammunitionQuantity = 5
     
     var touchDifferent: (CGFloat, CGFloat)?
     
@@ -127,6 +131,22 @@ extension StageScene {
         fire.zPosition = 11
         
         addChild(fire)
+        
+        //Add empty magzine
+        let magzineNode = SKNode()
+        magzineNode.position = CGPoint(x: 760, y: 20)
+        magzineNode.zPosition = 11
+        
+        var bullets = Array<Bullet>()
+        for i in 0...ammunitionQuantity - 1 {
+            let bullet = Bullet()
+            bullet.position = CGPoint(x: -30 * i, y: 0)
+            bullets.append(bullet)
+            magzineNode.addChild(bullet)
+        }
+        
+        magzine = Magzine(bullets: bullets)
+        addChild(magzineNode)
     }
     
     func generateDuck(hasTarget: Bool = false) -> Duck {

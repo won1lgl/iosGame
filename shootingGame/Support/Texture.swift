@@ -11,6 +11,8 @@ import Foundation
 enum Texture: String {
     case fireButtonNormal = "fire_normal"
     case fireButtonPressed = "fire_pressed"
+    case bulletEmptyTexture = "icon_bullet_empty"
+    case bulletTexture = "icon_bullet"
     
     var imageName: String {
         return rawValue
