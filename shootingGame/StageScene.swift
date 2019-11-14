@@ -11,21 +11,82 @@ import SpriteKit
 
 class StageScene: SKScene {
     
+    //Node
+    var rifle: SKSpriteNode?
+    var crosshair: SKSpriteNode?
+    
     var duckMoveDuration: TimeInterval!
     
     let duckXPosition: [Int] = [160, 240, 320, 400, 480, 560, 640]
     var usingTargetsXPostion = Array<Int>()
     
+    var touchDifferent: (CGFloat, CGFloat)?
+    
+    
     //custom the scene
     override func didMove(to view: SKView) {
+        loadUI()
+        
         activeDucks()
         activeTargets()
     }
 }
 
+//MARK: -Touches
+extension StageScene {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        guard let crosshair = crosshair else {
+            return
+        }
+        guard let touch = touches.first else {
+            return
+        }
+        
+        let xDifference = touch.location(in: self).x - crosshair.position.x
+        let yDifference = touch.location(in: self).y - crosshair.position.y
+        touchDifferent = (xDifference, yDifference)
+        
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let crosshair = crosshair else {
+            return
+        }
+        guard let touch = touches.first else {
+            return
+        }
+        guard let touchDifferent = touchDifferent else {
+            return
+        }
+        
+        let location = touch.location(in: self)
+        let newCrosshairPosition = CGPoint(x: location.x - touchDifferent.0, y: location.y - touchDifferent.1)
+        
+        crosshair.position = newCrosshairPosition
+        
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+}
+
 //MARK: -Action
 //!!extension means add more function in a type
 extension StageScene {
+    
+    func loadUI () {
+        if let scene = scene {
+            //rifle and crosshair
+            rifle = childNode(withName: "rifle") as? SKSpriteNode
+            crosshair = childNode(withName: "crosshair") as? SKSpriteNode
+            crosshair?.position = CGPoint(x: scene.frame.midX, y: scene.frame.midY)
+        }
+    }
+    
     func generateDuck(hasTarget: Bool = false) -> Duck {
         var duck: SKSpriteNode
         var stick: SKSpriteNode
