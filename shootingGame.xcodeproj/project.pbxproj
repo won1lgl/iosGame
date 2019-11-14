@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045B08C6237D1AB70040AAA9 /* FireButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B08C5237D1AB70040AAA9 /* FireButton.swift */; };
+		045B08C8237D1BB70040AAA9 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B08C7237D1BB70040AAA9 /* Texture.swift */; };
 		04697D12237BEE4E004C3F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D11237BEE4E004C3F21 /* AppDelegate.swift */; };
 		04697D1A237BEE4E004C3F21 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D19237BEE4E004C3F21 /* GameViewController.swift */; };
 		04697D1D237BEE4E004C3F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04697D1B237BEE4E004C3F21 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		045B08C5237D1AB70040AAA9 /* FireButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireButton.swift; sourceTree = "<group>"; };
+		045B08C7237D1BB70040AAA9 /* Texture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
 		04697D0E237BEE4E004C3F21 /* shootingGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shootingGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04697D11237BEE4E004C3F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04697D19237BEE4E004C3F21 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -89,10 +93,12 @@
 			children = (
 				04697D11237BEE4E004C3F21 /* AppDelegate.swift */,
 				04697D39237BF941004C3F21 /* StageScene.swift */,
+				04697D3D237C17FE004C3F21 /* Duck.swift */,
 				04697D3F237C2F5B004C3F21 /* Target.swift */,
+				045B08C5237D1AB70040AAA9 /* FireButton.swift */,
+				045B08C7237D1BB70040AAA9 /* Texture.swift */,
 				04697D37237BF48A004C3F21 /* StageScene.sks */,
 				04697D3B237C14D1004C3F21 /* MyScene1.sks */,
-				04697D3D237C17FE004C3F21 /* Duck.swift */,
 				04697D19237BEE4E004C3F21 /* GameViewController.swift */,
 				04697D1B237BEE4E004C3F21 /* Main.storyboard */,
 				04697D1E237BEE51004C3F21 /* Assets.xcassets */,
@@ -217,7 +223,9 @@
 				04697D3E237C17FE004C3F21 /* Duck.swift in Sources */,
 				04697D1A237BEE4E004C3F21 /* GameViewController.swift in Sources */,
 				04697D12237BEE4E004C3F21 /* AppDelegate.swift in Sources */,
+				045B08C6237D1AB70040AAA9 /* FireButton.swift in Sources */,
 				04697D3A237BF941004C3F21 /* StageScene.swift in Sources */,
+				045B08C8237D1BB70040AAA9 /* Texture.swift in Sources */,
 				04697D40237C2F5B004C3F21 /* Target.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

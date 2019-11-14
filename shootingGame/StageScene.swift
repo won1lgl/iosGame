@@ -14,6 +14,10 @@ class StageScene: SKScene {
     //Node
     var rifle: SKSpriteNode?
     var crosshair: SKSpriteNode?
+    var fire = FireButton()
+    
+    //Touches
+    var selectedNodes: [UITouch: SKSpriteNode] = [:]
     
     var duckMoveDuration: TimeInterval!
     
@@ -48,13 +52,24 @@ extension StageScene {
         guard let crosshair = crosshair else {
             return
         }
-        guard let touch = touches.first else {
-            return
-        }
         
-        let xDifference = touch.location(in: self).x - crosshair.position.x
-        let yDifference = touch.location(in: self).y - crosshair.position.y
-        touchDifferent = (xDifference, yDifference)
+        for touch in touches {
+            let location = touch.location(in: self)
+            if let node = self.atPoint(location) as? SKSpriteNode {
+                if !selectedNodes.values.contains(crosshair) && !(node is FireButton){
+                    selectedNodes[touch] = crosshair
+                    let xDifference = touch.location(in: self).x - crosshair.position.x
+                    let yDifference = touch.location(in: self).y - crosshair.position.y
+                    touchDifferent = (xDifference, yDifference)
+                }
+                
+                //actual shooting
+                if node is FireButton {
+                    selectedNodes[touch] = fire
+                    fire.isPressed = true
+                }
+            }
+        }
         
     }
     
@@ -62,22 +77,33 @@ extension StageScene {
         guard let crosshair = crosshair else {
             return
         }
-        guard let touch = touches.first else {
-            return
-        }
         guard let touchDifferent = touchDifferent else {
             return
         }
         
-        let location = touch.location(in: self)
-        let newCrosshairPosition = CGPoint(x: location.x - touchDifferent.0, y: location.y - touchDifferent.1)
-        
-        crosshair.position = newCrosshairPosition
-        
+        for touch in touches {
+            let location = touch.location(in: self)
+            if let node = selectedNodes[touch] {
+                if node.name == "fire" {
+                    
+                } else {
+                    let newCrosshairPosition = CGPoint(x: location.x - touchDifferent.0, y: location.y - touchDifferent.1)
+                    
+                    crosshair.position = newCrosshairPosition
+                }
+            }
+        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        for touch in touches {
+            if selectedNodes[touch] !== nil {
+                if let fire = selectedNodes[touch] as? FireButton {
+                    fire.isPressed = false
+                }
+                selectedNodes[touch] = nil
+            }
+        }
     }
     
 }
@@ -93,6 +119,14 @@ extension StageScene {
             crosshair = childNode(withName: "crosshair") as? SKSpriteNode
             crosshair?.position = CGPoint(x: scene.frame.midX, y: scene.frame.midY)
         }
+        
+        //add fire button
+        fire.position = CGPoint(x: 720, y: 80)
+        fire.xScale = 1.7
+        fire.yScale = 1.7
+        fire.zPosition = 11
+        
+        addChild(fire)
     }
     
     func generateDuck(hasTarget: Bool = false) -> Duck {
