@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import GameplayKit
 
 class StageScene: SKScene {
     
@@ -30,10 +31,21 @@ class StageScene: SKScene {
     
     var touchDifferent: (CGFloat, CGFloat)?
     
+    //GameState Machine
+    
+    var gameStateMachine: GKStateMachine!
     
     //custom the scene
     override func didMove(to view: SKView) {
         loadUI()
+        
+        gameStateMachine = GKStateMachine(states: [
+            ReadyState(fire: fire, magzine: magzine),
+            ShootingState(fire: fire, magzine: magzine),
+            ReloadingState(fire: fire, magzine: magzine)
+        ])
+        
+        gameStateMachine.enter(ReadyState.self)
         
         activeDucks()
         activeTargets()
@@ -70,7 +82,10 @@ extension StageScene {
                 //actual shooting
                 if node is FireButton {
                     selectedNodes[touch] = fire
-                    fire.isPressed = true
+                    
+                    if !fire.isReloading{
+                        fire.isPressed = true
+                    }
                 }
             }
         }

@@ -10,8 +10,11 @@ import Foundation
 import SpriteKit
 
 class FireButton: SKSpriteNode {
+    var isReloading = false
+    
     var isPressed: Bool = false {
         didSet {
+            guard isReloading else {return}
             if isPressed {
                 texture = SKTexture(imageNamed: Texture.fireButtonPressed.imageName)
             } else {

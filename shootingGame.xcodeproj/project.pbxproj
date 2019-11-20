@@ -22,6 +22,7 @@
 		04697D3C237C14D1004C3F21 /* MyScene1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04697D3B237C14D1004C3F21 /* MyScene1.sks */; };
 		04697D3E237C17FE004C3F21 /* Duck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D3D237C17FE004C3F21 /* Duck.swift */; };
 		04697D40237C2F5B004C3F21 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D3F237C2F5B004C3F21 /* Target.swift */; };
+		04A787802385635D0073CBC1 /* GameStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7877F2385635D0073CBC1 /* GameStateMachine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		04697D3B237C14D1004C3F21 /* MyScene1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene1.sks; sourceTree = "<group>"; };
 		04697D3D237C17FE004C3F21 /* Duck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duck.swift; sourceTree = "<group>"; };
 		04697D3F237C2F5B004C3F21 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		04A7877F2385635D0073CBC1 /* GameStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateMachine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 		04697D10237BEE4E004C3F21 /* shootingGame */ = {
 			isa = PBXGroup;
 			children = (
+				04A7877E238563100073CBC1 /* Logic */,
 				045B08D1237D3E880040AAA9 /* Support */,
 				045B08D0237D3E4B0040AAA9 /* Scene */,
 				045B08CF237D3E1C0040AAA9 /* Node */,
@@ -161,6 +164,14 @@
 				04697D2E237BEE51004C3F21 /* Info.plist */,
 			);
 			path = shootingGameTests;
+			sourceTree = "<group>";
+		};
+		04A7877E238563100073CBC1 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				04A7877F2385635D0073CBC1 /* GameStateMachine.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04697D3E237C17FE004C3F21 /* Duck.swift in Sources */,
+				04A787802385635D0073CBC1 /* GameStateMachine.swift in Sources */,
 				04697D1A237BEE4E004C3F21 /* GameViewController.swift in Sources */,
 				04697D12237BEE4E004C3F21 /* AppDelegate.swift in Sources */,
 				045B08C6237D1AB70040AAA9 /* FireButton.swift in Sources */,
