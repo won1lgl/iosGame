@@ -14,7 +14,7 @@ class FireButton: SKSpriteNode {
     
     var isPressed: Bool = false {
         didSet {
-            guard isReloading else {return}
+            guard !isReloading else {return}
             if isPressed {
                 texture = SKTexture(imageNamed: Texture.fireButtonPressed.imageName)
             } else {

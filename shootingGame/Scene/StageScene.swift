@@ -85,6 +85,11 @@ extension StageScene {
                     
                     if !fire.isReloading{
                         fire.isPressed = true
+                        magzine.shoot()
+                        
+                        if magzine.needToReload() {
+                            gameStateMachine.enter(ReloadingState.self)
+                        }
                     }
                 }
             }
