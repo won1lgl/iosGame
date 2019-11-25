@@ -29,6 +29,14 @@ class StageScene: SKScene {
     
     let ammunitionQuantity = 5
     
+    var zPositionDecimal = 0.001 {
+        didSet {
+            if zPositionDecimal == 1 {
+                zPositionDecimal = 0.001
+            }
+        }
+    }
+    
     var touchDifferent: (CGFloat, CGFloat)?
     
     //GameState Machine
@@ -89,6 +97,23 @@ extension StageScene {
                         
                         if magzine.needToReload() {
                             gameStateMachine.enter(ReloadingState.self)
+                        }
+                        
+                        //find shoot Node
+                        let shootNode = findShootNode(at: crosshair.position)
+                        //add shot image
+                        addShot(imageNamed: "shot_blue", to: shootNode, on: crosshair.position)
+                        //add score
+                        
+                        //update score node
+                        
+                        //animate shoot node
+                        shootNode.physicsBody = nil
+                        if let node = shootNode.parent {
+                            node.run(.sequence([
+                                .wait(forDuration: 0.2),
+                                .scaleY(to: 0, duration: 0.2)
+                            ]))
                         }
                     }
                 }
@@ -192,6 +217,11 @@ extension StageScene {
         duck.name = duckNodeName
         duck.position = CGPoint(x: 0, y: 140)
         
+        let physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: texture.size())
+        physicsBody.affectedByGravity = false
+        physicsBody.isDynamic = false
+        duck.physicsBody = physicsBody
+        
         stick = SKSpriteNode(imageNamed: "stick/\(Int.random(in: 1...2))")
         stick.anchorPoint = CGPoint(x: 0.5, y: 0)
         stick.position = CGPoint(x: 0, y: 0)
@@ -237,6 +267,8 @@ extension StageScene {
             let duck = self.generateDuck(hasTarget: Bool.random())
             duck.position = CGPoint(x: -10, y: Int.random(in: 60...90))
             duck.zPosition = Int.random(in: 0...1) == 0 ? 4 : 6
+            duck.zPosition += CGFloat(self.zPositionDecimal)
+            self.zPositionDecimal += 0.001
             
             self.scene?.addChild(duck)
             
@@ -267,8 +299,18 @@ extension StageScene {
             
             self.scene?.addChild(target)
             
+            let physicsBody = SKPhysicsBody(circleOfRadius: 71/2)
+            physicsBody.affectedByGravity = false
+            physicsBody.isDynamic = false
+            physicsBody.allowsRotation = false
+            
             target.run(.sequence([
                 .scaleY(to: 1, duration: 0.2),
+                .run {
+                    if let target = target.childNode(withName: "target") {
+                        target.physicsBody = physicsBody
+                    }
+                    },
                 .wait(forDuration: TimeInterval(Int.random(in: 3...4))),
                 .scaleY(to: 0, duration: 0.2),
                 .removeFromParent(),
@@ -276,6 +318,38 @@ extension StageScene {
                     self.usingTargetsXPostion.remove(at: self.usingTargetsXPostion.firstIndex(of: xPosition)!)
                 }]))
         }
+    }
+    
+    func findShootNode(at position: CGPoint) -> SKSpriteNode {
+        var shootNode = SKSpriteNode()
+        var biggestZPosition: CGFloat = 0.0
+        
+        self.physicsWorld.enumerateBodies(at: position) { (body, pointer) in
+            guard let node = body.node as? SKSpriteNode else {return}
+            if node.name == "duck" || node.name == "target" || node.name == "duck_target" {
+                if let parentNode = node.parent {
+                    if parentNode.zPosition > biggestZPosition {
+                        biggestZPosition = parentNode.zPosition
+                        shootNode = node
+                    }
+                }
+            }
+        }
+        
+        return shootNode
+    }
+    
+    func addShot(imageNamed imageName:String, to node:SKSpriteNode, on positon: CGPoint) {
+        let convertedPosition = self.convert(positon, to: node)
+        let shot = SKSpriteNode(imageNamed: imageName)
+        
+        shot.position = convertedPosition
+        node.addChild(shot)
+        shot.run(.sequence([
+            .wait(forDuration: 2),
+            .fadeAlpha(to: 0, duration: 0.3),
+            .removeFromParent()
+            ]))
     }
     
     func syncRiflePosition() {
