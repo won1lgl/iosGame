@@ -16,6 +16,8 @@ class StageScene: SKScene {
     var rifle: SKSpriteNode?
     var crosshair: SKSpriteNode?
     var fire = FireButton()
+    var duckScoreNode: SKNode!
+    var targetScoreNode: SKNode!
     
     var magzine: Magzine!
     
@@ -119,7 +121,8 @@ extension StageScene {
                         //add score
                         addTextNode(on: crosshair.position, from: scoreText)
                         //update score node
-                        
+                        updateScore(text: String(duckCount * duckScore), node: &duckScoreNode)
+                        updateScore(text: String(targetCount * targetScore), node: &targetScoreNode)
                         //animate shoot node
                         shootNode.physicsBody = nil
                         if let node = shootNode.parent {
@@ -189,6 +192,32 @@ extension StageScene {
         fire.zPosition = 11
         
         addChild(fire)
+        
+        //Add icons
+        let duckIcon = SKSpriteNode(imageNamed: Texture.duckIcon.imageName)
+        duckIcon.position = CGPoint(x: 36, y: 365)
+        duckIcon.zPosition = 11
+        addChild(duckIcon)
+        
+        let targetIcon = SKSpriteNode(imageNamed: Texture.targetIcon.imageName)
+        targetIcon.position = CGPoint(x: 36, y: 325)
+        targetIcon.zPosition = 11
+        addChild(targetIcon)
+        
+        //Add score node
+        duckScoreNode = generateTextNode(from: "0")
+        duckScoreNode.position = CGPoint(x: 60, y: 365)
+        duckScoreNode.zPosition = 11
+        duckScoreNode.xScale = 0.5
+        duckScoreNode.yScale = 0.5
+        addChild(duckScoreNode)
+        
+        targetScoreNode = generateTextNode(from: "0")
+        targetScoreNode.position = CGPoint(x: 60, y: 325)
+        targetScoreNode.zPosition = 11
+        targetScoreNode.xScale = 0.5
+        targetScoreNode.yScale = 0.5
+        addChild(targetScoreNode)
         
         //Add empty magzine
         let magzineNode = SKNode()
@@ -455,6 +484,22 @@ extension StageScene {
         }
         
         return (scoreText, shotImageName)
+    }
+    
+    func updateScore(text: String, node: inout SKNode, leadingAnchorPoint: Bool = true){
+        let position = node.position
+        let zPosition = node.zPosition
+        let xScale = node.xScale
+        let yScale = node.yScale
+        
+        node.removeFromParent()
+        node = generateTextNode(from: text, leadingAchorPoint: leadingAnchorPoint)
+        node.position = position
+        node.zPosition = zPosition
+        node.xScale = xScale
+        node.yScale = yScale
+        
+        addChild(node)
     }
     
     func syncRiflePosition() {
