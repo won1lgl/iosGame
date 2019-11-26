@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043D4629238D442B00090BD7 /* scoreNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D4628238D442B00090BD7 /* scoreNumber.swift */; };
 		045B08C6237D1AB70040AAA9 /* FireButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B08C5237D1AB70040AAA9 /* FireButton.swift */; };
 		045B08C8237D1BB70040AAA9 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B08C7237D1BB70040AAA9 /* Texture.swift */; };
 		045B08D5237D3F710040AAA9 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B08D4237D3F710040AAA9 /* Bullet.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043D4628238D442B00090BD7 /* scoreNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreNumber.swift; sourceTree = "<group>"; };
 		045B08C5237D1AB70040AAA9 /* FireButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireButton.swift; sourceTree = "<group>"; };
 		045B08C7237D1BB70040AAA9 /* Texture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
 		045B08D4237D3F710040AAA9 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				04697D1E237BEE51004C3F21 /* Assets.xcassets */,
 				04697D20237BEE51004C3F21 /* LaunchScreen.storyboard */,
 				04CEF0F6238BC55300A6E79B /* ActionKey.swift */,
+				043D4628238D442B00090BD7 /* scoreNumber.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				045B08C8237D1BB70040AAA9 /* Texture.swift in Sources */,
 				04CEF0F7238BC55300A6E79B /* ActionKey.swift in Sources */,
 				04697D40237C2F5B004C3F21 /* Target.swift in Sources */,
+				043D4629238D442B00090BD7 /* scoreNumber.swift in Sources */,
 				045B08D7237D43E20040AAA9 /* Magzine.swift in Sources */,
 				045B08D5237D3F710040AAA9 /* Bullet.swift in Sources */,
 			);

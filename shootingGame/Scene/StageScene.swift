@@ -19,6 +19,15 @@ class StageScene: SKScene {
     
     var magzine: Magzine!
     
+    //Score
+    var totalScore = 0
+    var targetScore = 10
+    var duckScore = 10
+    
+    //Count
+    var duckCount = 0
+    var targetCount = 0
+    
     //Touches
     var selectedNodes: [UITouch: SKSpriteNode] = [:]
     
@@ -101,10 +110,14 @@ extension StageScene {
                         
                         //find shoot Node
                         let shootNode = findShootNode(at: crosshair.position)
-                        //add shot image
-                        addShot(imageNamed: "shot_blue", to: shootNode, on: crosshair.position)
-                        //add score
                         
+                        guard let (scoreText, shotImageName) = findTextAndImageName(for: shootNode.name) else {
+                            return
+                        }
+                        //add shot image
+                        addShot(imageNamed: shotImageName, to: shootNode, on: crosshair.position)
+                        //add score
+                        addTextNode(on: crosshair.position, from: scoreText)
                         //update score node
                         
                         //animate shoot node
@@ -350,6 +363,98 @@ extension StageScene {
             .fadeAlpha(to: 0, duration: 0.3),
             .removeFromParent()
             ]))
+    }
+    
+    func generateTextNode(from text: String, leadingAchorPoint: Bool = true) -> SKNode {
+        let node = SKNode()
+        var width: CGFloat = 0.0
+        for character in text {
+            var characterNode = SKSpriteNode()
+            
+            switch character {
+            case "0":
+                characterNode = SKSpriteNode(imageNamed: ScoreNumber.zero.textureName)
+            case "1":
+                characterNode = SKSpriteNode(imageNamed: ScoreNumber.one.textureName)
+            case "2":
+                characterNode = SKSpriteNode(imageNamed: ScoreNumber.two.textureName)
+            case "3":
+                characterNode = SKSpriteNode(imageNamed: ScoreNumber.three.textureName)
+            case "4":
+                characterNode = SKSpriteNode(imageNamed: ScoreNumber.four.textureName)
+            case "5":
+                characterNode = SKSpriteNode(imageNamed: ScoreNumber.five.textureName)
+            case "6":
+                characterNode = SKSpriteNode(imageNamed: ScoreNumber.six.textureName)
+            case "7":
+                characterNode = SKSpriteNode(imageNamed: ScoreNumber.seven.textureName)
+            case "8":
+                characterNode = SKSpriteNode(imageNamed: ScoreNumber.eight.textureName)
+            case "9":
+                characterNode = SKSpriteNode(imageNamed: ScoreNumber.nine.textureName)
+            default:
+                continue
+            }
+            
+            node.addChild(characterNode)
+            characterNode.anchorPoint = CGPoint(x: 0, y: 0.5)
+            characterNode.position = CGPoint(x: width, y: 0)
+            width += characterNode.size.width
+        }
+        
+        if leadingAchorPoint {
+            return node
+        } else {
+            let anotherNode = SKNode()
+            anotherNode.addChild(node)
+            node.position = CGPoint(x: -width/2, y: 0)
+            
+            return anotherNode
+        }
+    }
+    
+    func addTextNode(on position: CGPoint, from text: String) {
+        let scorePosition = CGPoint(x: position.x + 10, y: position.y + 30)
+        let scoreNode = generateTextNode(from: text)
+        scoreNode.position = scorePosition
+        scoreNode.zPosition = 9
+        scoreNode.xScale = 0.5
+        scoreNode.yScale = 0.5
+        self.addChild(scoreNode)
+        
+        scoreNode.run(.sequence([
+            .wait(forDuration: 0.5),
+            .fadeOut(withDuration: 0.2),
+            .removeFromParent()
+        ]))
+    }
+    
+    func findTextAndImageName(for nodeName: String?) -> (String, String)? {
+        var scoreText = ""
+        var shotImageName = ""
+        
+        switch nodeName {
+        case "duck":
+            scoreText = "+\(duckScore)"
+            duckCount += 1
+            totalScore += duckScore
+            shotImageName = Texture.shotBlue.imageName
+        case "duck_target":
+            scoreText = "+\(duckScore + targetScore)"
+            duckCount += 1
+            targetCount += 1
+            totalScore += duckScore + targetScore
+            shotImageName = Texture.shotBlue.imageName
+        case "target":
+            scoreText = "+\(targetScore)"
+            targetCount += 1
+            totalScore += targetScore
+            shotImageName = Texture.shotBrown.imageName
+        default:
+            return nil
+        }
+        
+        return (scoreText, shotImageName)
     }
     
     func syncRiflePosition() {
