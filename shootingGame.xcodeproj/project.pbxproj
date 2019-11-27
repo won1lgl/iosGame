@@ -20,7 +20,6 @@
 		04697D2D237BEE51004C3F21 /* shootingGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D2C237BEE51004C3F21 /* shootingGameTests.swift */; };
 		04697D38237BF48A004C3F21 /* StageScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04697D37237BF48A004C3F21 /* StageScene.sks */; };
 		04697D3A237BF941004C3F21 /* StageScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D39237BF941004C3F21 /* StageScene.swift */; };
-		04697D3C237C14D1004C3F21 /* MyScene1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04697D3B237C14D1004C3F21 /* MyScene1.sks */; };
 		04697D3E237C17FE004C3F21 /* Duck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D3D237C17FE004C3F21 /* Duck.swift */; };
 		04697D40237C2F5B004C3F21 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D3F237C2F5B004C3F21 /* Target.swift */; };
 		04860D63238E17D200ED0DF9 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04860D62238E17D200ED0DF9 /* GameManager.swift */; };
@@ -30,6 +29,9 @@
 		04860D6B238E215700ED0DF9 /* Cheerful Annoyance.wav in Resources */ = {isa = PBXBuildFile; fileRef = 04860D67238E215700ED0DF9 /* Cheerful Annoyance.wav */; };
 		04860D6D238E224E00ED0DF9 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04860D6C238E224E00ED0DF9 /* Audio.swift */; };
 		04860D6F238E22BF00ED0DF9 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04860D6E238E22BF00ED0DF9 /* Sound.swift */; };
+		04860D71238E9CF600ED0DF9 /* ScoreBoardScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04860D70238E9CF600ED0DF9 /* ScoreBoardScene.sks */; };
+		04860D73238E9E1B00ED0DF9 /* StoryBoardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04860D72238E9E1B00ED0DF9 /* StoryBoardScene.swift */; };
+		04860D75238EA20D00ED0DF9 /* StartMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04860D74238EA20D00ED0DF9 /* StartMenuScene.sks */; };
 		04A787802385635D0073CBC1 /* GameStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7877F2385635D0073CBC1 /* GameStateMachine.swift */; };
 		04CEF0F7238BC55300A6E79B /* ActionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEF0F6238BC55300A6E79B /* ActionKey.swift */; };
 /* End PBXBuildFile section */
@@ -62,7 +64,6 @@
 		04697D2E237BEE51004C3F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04697D37237BF48A004C3F21 /* StageScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageScene.sks; sourceTree = "<group>"; };
 		04697D39237BF941004C3F21 /* StageScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageScene.swift; sourceTree = "<group>"; };
-		04697D3B237C14D1004C3F21 /* MyScene1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene1.sks; sourceTree = "<group>"; };
 		04697D3D237C17FE004C3F21 /* Duck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duck.swift; sourceTree = "<group>"; };
 		04697D3F237C2F5B004C3F21 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		04860D62238E17D200ED0DF9 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
@@ -72,6 +73,9 @@
 		04860D67238E215700ED0DF9 /* Cheerful Annoyance.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Cheerful Annoyance.wav"; sourceTree = "<group>"; };
 		04860D6C238E224E00ED0DF9 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		04860D6E238E22BF00ED0DF9 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		04860D70238E9CF600ED0DF9 /* ScoreBoardScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ScoreBoardScene.sks; sourceTree = "<group>"; };
+		04860D72238E9E1B00ED0DF9 /* StoryBoardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardScene.swift; sourceTree = "<group>"; };
+		04860D74238EA20D00ED0DF9 /* StartMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartMenuScene.sks; sourceTree = "<group>"; };
 		04A7877F2385635D0073CBC1 /* GameStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateMachine.swift; sourceTree = "<group>"; };
 		04CEF0F6238BC55300A6E79B /* ActionKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,9 +112,11 @@
 		045B08D0237D3E4B0040AAA9 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				04697D39237BF941004C3F21 /* StageScene.swift */,
 				04697D37237BF48A004C3F21 /* StageScene.sks */,
-				04697D3B237C14D1004C3F21 /* MyScene1.sks */,
+				04860D70238E9CF600ED0DF9 /* ScoreBoardScene.sks */,
+				04860D74238EA20D00ED0DF9 /* StartMenuScene.sks */,
+				04697D39237BF941004C3F21 /* StageScene.swift */,
+				04860D72238E9E1B00ED0DF9 /* StoryBoardScene.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -284,12 +290,13 @@
 			files = (
 				04860D6A238E215700ED0DF9 /* hit.wav in Resources */,
 				04697D1D237BEE4E004C3F21 /* Main.storyboard in Resources */,
+				04860D71238E9CF600ED0DF9 /* ScoreBoardScene.sks in Resources */,
 				04860D68238E215700ED0DF9 /* score.wav in Resources */,
 				04697D1F237BEE51004C3F21 /* Assets.xcassets in Resources */,
 				04860D6B238E215700ED0DF9 /* Cheerful Annoyance.wav in Resources */,
+				04860D75238EA20D00ED0DF9 /* StartMenuScene.sks in Resources */,
 				04860D69238E215700ED0DF9 /* reload.wav in Resources */,
 				04697D22237BEE51004C3F21 /* LaunchScreen.storyboard in Resources */,
-				04697D3C237C14D1004C3F21 /* MyScene1.sks in Resources */,
 				04697D38237BF48A004C3F21 /* StageScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +322,7 @@
 				045B08C6237D1AB70040AAA9 /* FireButton.swift in Sources */,
 				04697D3A237BF941004C3F21 /* StageScene.swift in Sources */,
 				04860D6D238E224E00ED0DF9 /* Audio.swift in Sources */,
+				04860D73238E9E1B00ED0DF9 /* StoryBoardScene.swift in Sources */,
 				045B08C8237D1BB70040AAA9 /* Texture.swift in Sources */,
 				04CEF0F7238BC55300A6E79B /* ActionKey.swift in Sources */,
 				04697D40237C2F5B004C3F21 /* Target.swift in Sources */,

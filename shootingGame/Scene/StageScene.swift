@@ -30,7 +30,14 @@ class StageScene: SKScene {
     var manager: GameManager!
     
     //Time
-    var totalTime = 60
+    var totalTime = 60 {
+        didSet{
+            if totalTime == 0 {
+                self.view?.presentScene(SKScene(fileNamed: "ScoreBoardScene"))
+                self.removeAllActions()
+            }
+        }
+    }
     
     //GameState Machine
     
