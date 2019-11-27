@@ -184,6 +184,9 @@ extension StageScene {
         
         addChild(fire)
         
+        //Add time
+        manager.generateTimeNode()
+        
         //Add icons
         let duckIcon = SKSpriteNode(imageNamed: Texture.duckIcon.imageName)
         duckIcon.position = CGPoint(x: 36, y: 365)
