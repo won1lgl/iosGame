@@ -29,6 +29,9 @@ class StageScene: SKScene {
     //Game logic
     var manager: GameManager!
     
+    //Time
+    var totalTime = 60
+    
     //GameState Machine
     
     var gameStateMachine: GKStateMachine!
@@ -185,7 +188,7 @@ extension StageScene {
         addChild(fire)
         
         //Add time
-        manager.generateTimeNode()
+        self.generateTimeNode()
         
         //Add icons
         let duckIcon = SKSpriteNode(imageNamed: Texture.duckIcon.imageName)
@@ -228,6 +231,20 @@ extension StageScene {
         
         magzine = Magzine(bullets: bullets)
         addChild(magzineNode)
+    }
+    
+    func generateTimeNode() {
+        var timeNode = SKNode()
+        timeNode = manager.generateTextNode(from: String(totalTime), leadingAchorPoint: false)
+        timeNode.position = CGPoint(x: 760, y: 350)
+        timeNode.zPosition = 11
+        timeNode.xScale = 0.8
+        timeNode.yScale = 0.8
+        self.addChild(timeNode)
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
+            self.totalTime -= 1
+            self.manager.updateScore(text: String(self.totalTime), node: &timeNode, leadingAnchorPoint: false)
+        }
     }
     
     func syncRiflePosition() {

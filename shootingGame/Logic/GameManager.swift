@@ -20,9 +20,6 @@ class GameManager {
     //Count
     var duckCount = 0
     var targetCount = 0
-    
-    //Time
-    var totalTime = 30
 
     //Touches
     var duckMoveDuration: TimeInterval!
@@ -251,20 +248,6 @@ class GameManager {
              return anotherNode
          }
      }
-    
-    func generateTimeNode() {
-        var timeNode = SKNode()
-        timeNode = generateTextNode(from: String(totalTime), leadingAchorPoint: false)
-        timeNode.position = CGPoint(x: 760, y: 350)
-        timeNode.zPosition = 11
-        timeNode.xScale = 0.8
-        timeNode.yScale = 0.8
-        scene.addChild(timeNode)
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
-            self.totalTime -= 1
-            self.updateScore(text: String(self.totalTime), node: &timeNode, leadingAnchorPoint: false)
-        }
-    }
      
      func addTextNode(on position: CGPoint, from text: String) {
          let scorePosition = CGPoint(x: position.x + 10, y: position.y + 30)
