@@ -226,6 +226,8 @@ class GameManager {
                  characterNode = SKSpriteNode(imageNamed: ScoreNumber.eight.textureName)
              case "9":
                  characterNode = SKSpriteNode(imageNamed: ScoreNumber.nine.textureName)
+             case "+":
+                characterNode = SKSpriteNode(imageNamed: ScoreNumber.plus.textureName)
              default:
                  continue
              }
