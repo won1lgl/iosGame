@@ -23,6 +23,7 @@
 		04697D3C237C14D1004C3F21 /* MyScene1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04697D3B237C14D1004C3F21 /* MyScene1.sks */; };
 		04697D3E237C17FE004C3F21 /* Duck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D3D237C17FE004C3F21 /* Duck.swift */; };
 		04697D40237C2F5B004C3F21 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04697D3F237C2F5B004C3F21 /* Target.swift */; };
+		04860D63238E17D200ED0DF9 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04860D62238E17D200ED0DF9 /* GameManager.swift */; };
 		04A787802385635D0073CBC1 /* GameStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7877F2385635D0073CBC1 /* GameStateMachine.swift */; };
 		04CEF0F7238BC55300A6E79B /* ActionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEF0F6238BC55300A6E79B /* ActionKey.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		04697D3B237C14D1004C3F21 /* MyScene1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene1.sks; sourceTree = "<group>"; };
 		04697D3D237C17FE004C3F21 /* Duck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duck.swift; sourceTree = "<group>"; };
 		04697D3F237C2F5B004C3F21 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		04860D62238E17D200ED0DF9 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		04A7877F2385635D0073CBC1 /* GameStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateMachine.swift; sourceTree = "<group>"; };
 		04CEF0F6238BC55300A6E79B /* ActionKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				04A7877F2385635D0073CBC1 /* GameStateMachine.swift */,
+				04860D62238E17D200ED0DF9 /* GameManager.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				043D4629238D442B00090BD7 /* scoreNumber.swift in Sources */,
 				045B08D7237D43E20040AAA9 /* Magzine.swift in Sources */,
 				045B08D5237D3F710040AAA9 /* Bullet.swift in Sources */,
+				04860D63238E17D200ED0DF9 /* GameManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
