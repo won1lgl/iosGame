@@ -134,8 +134,8 @@
 				04697D20237BEE51004C3F21 /* LaunchScreen.storyboard */,
 				04CEF0F6238BC55300A6E79B /* ActionKey.swift */,
 				043D4628238D442B00090BD7 /* scoreNumber.swift */,
-				04860D6C238E224E00ED0DF9 /* Audio.swift */,
 				04860D6E238E22BF00ED0DF9 /* Sound.swift */,
+				04860D6C238E224E00ED0DF9 /* Audio.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";

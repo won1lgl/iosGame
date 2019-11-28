@@ -20,6 +20,11 @@ class StageScene: SKScene {
     var targetScoreNode: SKNode!
     
     var magzine: Magzine!
+    
+    //Timer
+    var activeDuckTimer: Timer?
+    var activeTargetTimer: Timer?
+    var timeCountDownTimer: Timer?
         
     //Touches
     var selectedNodes: [UITouch: SKSpriteNode] = [:]
@@ -33,10 +38,14 @@ class StageScene: SKScene {
     var totalTime = 5 {
         didSet{
             if totalTime == 0 {
+                Audio.sharedInstance.player(with: Sound.musicLoop.fileName)?.stop()
+                self.removeAllActions()
+                activeTargetTimer?.invalidate()
+                activeDuckTimer?.invalidate()
+                timeCountDownTimer?.invalidate()
                 if let scene = SKScene(fileNamed: "ScoreBoardScene") {
                     scene.scaleMode = .aspectFit
                     self.view?.presentScene(scene)
-                    self.removeAllActions()
                 }
             }
         }
@@ -64,8 +73,9 @@ class StageScene: SKScene {
         
         gameStateMachine.enter(ReadyState.self)
         
-        manager.activeDucks()
-        manager.activeTargets()
+        activeDuckTimer = manager.activeDucks()
+        activeTargetTimer = manager.activeTargets()
+        
     }
 }
 
@@ -251,7 +261,7 @@ extension StageScene {
         timeNode.xScale = 0.8
         timeNode.yScale = 0.8
         self.addChild(timeNode)
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
+        timeCountDownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
             self.totalTime -= 1
             self.manager.updateScore(text: String(self.totalTime), node: &timeNode, leadingAnchorPoint: false)
         }

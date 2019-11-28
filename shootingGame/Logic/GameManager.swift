@@ -109,8 +109,8 @@ class GameManager {
          return node
      }
      
-     func activeDucks() {
-         Timer.scheduledTimer(withTimeInterval: 1, repeats: true){timer in
+     func activeDucks() -> Timer{
+         return Timer.scheduledTimer(withTimeInterval: 1, repeats: true){timer in
              let duck = self.generateDuck(hasTarget: Bool.random())
              duck.position = CGPoint(x: -10, y: Int.random(in: 60...90))
              duck.zPosition = Int.random(in: 0...1) == 0 ? 4 : 6
@@ -131,8 +131,8 @@ class GameManager {
          }
      }
      
-     func activeTargets() {
-         Timer.scheduledTimer(withTimeInterval: 3, repeats: true){timer in
+     func activeTargets() -> Timer{
+         return Timer.scheduledTimer(withTimeInterval: 3, repeats: true){timer in
              let target = self.generateTarget()
              var xPosition = self.duckXPosition.randomElement()!
              while self.usingTargetsXPostion.contains(xPosition) {
