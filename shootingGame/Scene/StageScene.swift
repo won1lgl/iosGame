@@ -30,7 +30,7 @@ class StageScene: SKScene {
     var manager: GameManager!
     
     //Time
-    var totalTime = 60 {
+    var totalTime = 5 {
         didSet{
             if totalTime == 0 {
                 if let scene = SKScene(fileNamed: "ScoreBoardScene") {
