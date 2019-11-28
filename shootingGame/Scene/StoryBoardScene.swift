@@ -12,7 +12,9 @@ import SpriteKit
 class StoryBoardScene: SKScene {
     var duckScore: Int!
     var targetScore: Int!
+    var highestHistoryScore: Int!
     var manager: GameManager!
+    var userRepository = UserRepository()
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -33,7 +35,7 @@ class StoryBoardScene: SKScene {
 //Load UI
 extension StoryBoardScene {
     func loadUI() {
-        //load score ui
+        //load ScoreBoard UI
         let scoreBoarBackGround = SKSpriteNode(imageNamed: "scoreBoard")
         scoreBoarBackGround.position = CGPoint(x: 0, y: -7)
         scoreBoarBackGround.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -73,12 +75,31 @@ extension StoryBoardScene {
         wood4.position = CGPoint(x: 278, y: -72)
         addChild(wood4)
         
+        //Load Score
         let duckScoreNode = manager.generateTextNode(from: String(duckScore))
         let targetScoreNode = manager.generateTextNode(from: String(targetScore))
         duckScoreNode.position = CGPoint(x: 0, y: 40)
-        targetScoreNode.position = CGPoint(x: 0, y: -58)
+        targetScoreNode.position = CGPoint(x: 0, y: -56)
         addChild(duckScoreNode)
         addChild(targetScoreNode)
+        
+        //Load New Sign If Needed
+        let oldDuckHighestScore = userRepository.getScore(for: "duck")
+        let oldTargetHighestScore = userRepository.getScore(for: "target")
+        
+        if duckScore > oldDuckHighestScore {
+            userRepository.storageScore(score: duckScore, for: "duck")
+            let new = SKSpriteNode(imageNamed: "new")
+            new.position = CGPoint(x: -171, y: 37.3)
+            addChild(new)
+        }
+        if targetScore > oldTargetHighestScore {
+            userRepository.storageScore(score: targetScore, for: "target")
+            let new = SKSpriteNode(imageNamed: "new")
+            new.position = CGPoint(x: -171, y: -54.819)
+            addChild(new)
+        }
+        
     }
 }
 

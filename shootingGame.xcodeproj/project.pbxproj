@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0424ADCB238F639300903519 /* StartMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424ADCA238F639300903519 /* StartMenuScene.swift */; };
+		0424ADCD238FE1F500903519 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424ADCC238FE1F500903519 /* UserRepository.swift */; };
 		043D4629238D442B00090BD7 /* scoreNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D4628238D442B00090BD7 /* scoreNumber.swift */; };
 		045B08C6237D1AB70040AAA9 /* FireButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B08C5237D1AB70040AAA9 /* FireButton.swift */; };
 		045B08C8237D1BB70040AAA9 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B08C7237D1BB70040AAA9 /* Texture.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		0424ADCA238F639300903519 /* StartMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuScene.swift; sourceTree = "<group>"; };
+		0424ADCC238FE1F500903519 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		043D4628238D442B00090BD7 /* scoreNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreNumber.swift; sourceTree = "<group>"; };
 		045B08C5237D1AB70040AAA9 /* FireButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireButton.swift; sourceTree = "<group>"; };
 		045B08C7237D1BB70040AAA9 /* Texture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				043D4628238D442B00090BD7 /* scoreNumber.swift */,
 				04860D6E238E22BF00ED0DF9 /* Sound.swift */,
 				04860D6C238E224E00ED0DF9 /* Audio.swift */,
+				0424ADCC238FE1F500903519 /* UserRepository.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			files = (
 				04697D3E237C17FE004C3F21 /* Duck.swift in Sources */,
 				0424ADCB238F639300903519 /* StartMenuScene.swift in Sources */,
+				0424ADCD238FE1F500903519 /* UserRepository.swift in Sources */,
 				04A787802385635D0073CBC1 /* GameStateMachine.swift in Sources */,
 				04697D1A237BEE4E004C3F21 /* GameViewController.swift in Sources */,
 				04697D12237BEE4E004C3F21 /* AppDelegate.swift in Sources */,

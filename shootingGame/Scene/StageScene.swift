@@ -35,7 +35,7 @@ class StageScene: SKScene {
     var manager: GameManager!
     
     //Time
-    var totalTime = 5 {
+    var totalTime = 20 {
         didSet{
             if totalTime == 0 {
                 //remove music and Timer
