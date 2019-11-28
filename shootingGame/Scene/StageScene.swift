@@ -33,8 +33,11 @@ class StageScene: SKScene {
     var totalTime = 60 {
         didSet{
             if totalTime == 0 {
-                self.view?.presentScene(SKScene(fileNamed: "ScoreBoardScene"))
-                self.removeAllActions()
+                if let scene = SKScene(fileNamed: "ScoreBoardScene") {
+                    scene.scaleMode = .aspectFit
+                    self.view?.presentScene(scene)
+                    self.removeAllActions()
+                }
             }
         }
     }

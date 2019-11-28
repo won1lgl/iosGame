@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0424ADCB238F639300903519 /* StartMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424ADCA238F639300903519 /* StartMenuScene.swift */; };
 		043D4629238D442B00090BD7 /* scoreNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D4628238D442B00090BD7 /* scoreNumber.swift */; };
 		045B08C6237D1AB70040AAA9 /* FireButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B08C5237D1AB70040AAA9 /* FireButton.swift */; };
 		045B08C8237D1BB70040AAA9 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B08C7237D1BB70040AAA9 /* Texture.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0424ADCA238F639300903519 /* StartMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuScene.swift; sourceTree = "<group>"; };
 		043D4628238D442B00090BD7 /* scoreNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreNumber.swift; sourceTree = "<group>"; };
 		045B08C5237D1AB70040AAA9 /* FireButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireButton.swift; sourceTree = "<group>"; };
 		045B08C7237D1BB70040AAA9 /* Texture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
@@ -112,9 +114,10 @@
 		045B08D0237D3E4B0040AAA9 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				04860D74238EA20D00ED0DF9 /* StartMenuScene.sks */,
 				04697D37237BF48A004C3F21 /* StageScene.sks */,
 				04860D70238E9CF600ED0DF9 /* ScoreBoardScene.sks */,
-				04860D74238EA20D00ED0DF9 /* StartMenuScene.sks */,
+				0424ADCA238F639300903519 /* StartMenuScene.swift */,
 				04697D39237BF941004C3F21 /* StageScene.swift */,
 				04860D72238E9E1B00ED0DF9 /* StoryBoardScene.swift */,
 			);
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04697D3E237C17FE004C3F21 /* Duck.swift in Sources */,
+				0424ADCB238F639300903519 /* StartMenuScene.swift in Sources */,
 				04A787802385635D0073CBC1 /* GameStateMachine.swift in Sources */,
 				04697D1A237BEE4E004C3F21 /* GameViewController.swift in Sources */,
 				04697D12237BEE4E004C3F21 /* AppDelegate.swift in Sources */,
