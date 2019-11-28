@@ -38,15 +38,21 @@ class StageScene: SKScene {
     var totalTime = 5 {
         didSet{
             if totalTime == 0 {
+                //remove music and Timer
                 Audio.sharedInstance.player(with: Sound.musicLoop.fileName)?.stop()
                 self.removeAllActions()
                 activeTargetTimer?.invalidate()
                 activeDuckTimer?.invalidate()
                 timeCountDownTimer?.invalidate()
-                if let scene = SKScene(fileNamed: "ScoreBoardScene") {
-                    scene.scaleMode = .aspectFit
-                    self.view?.presentScene(scene)
-                }
+                
+                //go to the next scene
+                let storyBoardScene = StoryBoardScene(size: self.size)
+                storyBoardScene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                storyBoardScene.scaleMode = .aspectFit
+                storyBoardScene.duckScore = manager.duckScore * manager.duckCount
+                storyBoardScene.targetScore = manager.targetScore * manager.targetCount
+                let transition = SKTransition.fade(withDuration: 0.5)
+                self.view?.presentScene(storyBoardScene, transition: transition)
             }
         }
     }
