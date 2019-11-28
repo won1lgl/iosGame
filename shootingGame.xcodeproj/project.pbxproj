@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0424ADCB238F639300903519 /* StartMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424ADCA238F639300903519 /* StartMenuScene.swift */; };
 		0424ADCD238FE1F500903519 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424ADCC238FE1F500903519 /* UserRepository.swift */; };
+		0424ADCF238FF5B800903519 /* countDown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0424ADCE238FF5B800903519 /* countDown.wav */; };
 		043D4629238D442B00090BD7 /* scoreNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D4628238D442B00090BD7 /* scoreNumber.swift */; };
 		045B08C6237D1AB70040AAA9 /* FireButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B08C5237D1AB70040AAA9 /* FireButton.swift */; };
 		045B08C8237D1BB70040AAA9 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B08C7237D1BB70040AAA9 /* Texture.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		0424ADCA238F639300903519 /* StartMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuScene.swift; sourceTree = "<group>"; };
 		0424ADCC238FE1F500903519 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		0424ADCE238FF5B800903519 /* countDown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = countDown.wav; sourceTree = "<group>"; };
 		043D4628238D442B00090BD7 /* scoreNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreNumber.swift; sourceTree = "<group>"; };
 		045B08C5237D1AB70040AAA9 /* FireButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireButton.swift; sourceTree = "<group>"; };
 		045B08C7237D1BB70040AAA9 /* Texture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				04860D66238E215700ED0DF9 /* hit.wav */,
 				04860D65238E215600ED0DF9 /* reload.wav */,
 				04860D64238E215600ED0DF9 /* score.wav */,
+				0424ADCE238FF5B800903519 /* countDown.wav */,
 			);
 			path = shootingGame;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				04860D6B238E215700ED0DF9 /* Cheerful Annoyance.wav in Resources */,
 				04860D75238EA20D00ED0DF9 /* StartMenuScene.sks in Resources */,
 				04860D69238E215700ED0DF9 /* reload.wav in Resources */,
+				0424ADCF238FF5B800903519 /* countDown.wav in Resources */,
 				04697D22237BEE51004C3F21 /* LaunchScreen.storyboard in Resources */,
 				04697D38237BF48A004C3F21 /* StageScene.sks in Resources */,
 			);

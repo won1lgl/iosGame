@@ -35,11 +35,18 @@ class StageScene: SKScene {
     var manager: GameManager!
     
     //Time
-    var totalTime = 20 {
+    var totalTime = 60 {
         didSet{
+            
+            if totalTime == 10 {
+                Audio.sharedInstance.player(with: Sound.musicLoop.fileName)?.volume = 0.22
+                Audio.sharedInstance.playSound(soundFileName: Sound.countDown.fileName)
+            }
+            
             if totalTime == 0 {
                 //remove music and Timer
                 Audio.sharedInstance.player(with: Sound.musicLoop.fileName)?.stop()
+                Audio.sharedInstance.player(with: Sound.countDown.fileName)?.stop()
                 self.removeAllActions()
                 activeTargetTimer?.invalidate()
                 activeDuckTimer?.invalidate()

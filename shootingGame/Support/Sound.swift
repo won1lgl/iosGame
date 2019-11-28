@@ -13,6 +13,7 @@ enum Sound: String {
     case hit = "hit.wav"
     case reload = "reload.wav"
     case score = "score.wav"
+    case countDown = "countDown.wav"
     
     var fileName: String {
         return rawValue

@@ -111,7 +111,8 @@ extension StoryBoardScene {
             
             //play sound
             Audio.sharedInstance.playSound(soundFileName: Sound.hit.fileName)
-
+            Audio.sharedInstance.player(with: Sound.hit.fileName)?.volume = 0.5
+            
             //go to the next scene
             if let node = self.atPoint(location) as? SKSpriteNode {
                 if node.name == "restart" {
